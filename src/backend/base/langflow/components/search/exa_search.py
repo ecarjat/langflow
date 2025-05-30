@@ -1,5 +1,5 @@
 from langchain_core.tools import tool
-from metaphor_python import Metaphor
+from exa_py import Exa
 
 from langflow.custom import Component
 from langflow.field_typing import Tool
@@ -42,7 +42,7 @@ class ExaSearchToolkit(Component):
     ]
 
     def build_toolkit(self) -> Tool:
-        client = Metaphor(api_key=self.metaphor_api_key)
+        client = Exa(api_key=self.metaphor_api_key)
 
         @tool
         def search(query: str):
